@@ -286,7 +286,7 @@ class GaitProcessor(Processor):
 
         # Compute number of samples between peaks using the real part of the FFT:
         interpeak = compute_interpeak(data, self.sampling_frequency)
-        decel = np.int(np.round(self.stride_fraction * interpeak))
+        decel = int(np.round(self.stride_fraction * interpeak))
 
         # Find maximum peaks close to maximum peaks of smoothed data:
         ipeaks = []
@@ -348,7 +348,7 @@ class GaitProcessor(Processor):
 
         # Compute number of samples between peaks using the real part of the FFT:
         interpeak = compute_interpeak(data, self.sampling_frequency)
-        decel = np.int(interpeak / 2)
+        decel = int(interpeak / 2)
 
         # Find maximum peaks close to maximum peaks of smoothed data:
         strikes_idx = []
@@ -418,8 +418,8 @@ class GaitProcessor(Processor):
         else:
             coefficients, _ = autocorrelate(x, unbias=1, normalize=2)
 
-            step_period = np.int(np.round(1 / average_step_duration))
-            stride_period = np.int(np.round(1 / average_stride_duration))
+            step_period = int(np.round(1 / average_step_duration))
+            stride_period = int(np.round(1 / average_stride_duration))
 
             step_regularity = coefficients[step_period]
             stride_regularity = coefficients[stride_period]
@@ -501,8 +501,8 @@ class GaitProcessor(Processor):
         sd_stride_durations = np.mean((np.std(stride_durations1),
                                     np.std(stride_durations2)))
 
-        step_period = np.int(np.round(1 / avg_step_duration))
-        stride_period = np.int(np.round(1 / avg_stride_duration))
+        step_period = int(np.round(1 / avg_step_duration))
+        stride_period = int(np.round(1 / avg_stride_duration))
 
         step_regularity, stride_regularity, symmetry = self.gait_regularity_symmetry(data,
                                                                                      average_step_duration=avg_step_duration, 
