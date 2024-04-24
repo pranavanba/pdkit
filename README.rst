@@ -46,21 +46,21 @@ or
 
 .. code-block:: console
 
-    $ pip install git+git://github.com/pdkit/pdkit.git
+    $ pip install git+git://github.com/pranavanba/pdkit.git
 
 For "editable" install
 ======================
 
 .. code-block:: console
 
-    $ pip install -e git://github.com/pdkit/pdkit.git#egg=pdkit
+    $ pip install -e git://github.com/pranavanba/pdkit.git#egg=pdkit
 
 For development install
 =========================
 
 .. code-block:: console
 
-    $ git clone https://github.com/pdkit/pdkit.git
+    $ git clone https://github.com/pranavanba/pdkit.git
     $ pip install -r requirements.txt
     $ pip install .
 
