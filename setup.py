@@ -39,7 +39,7 @@ setup(
     name='pdkit',
     version=VERSION,
     description='The Parkinson`s Disease Data Science Toolkit',
-    url='https://github.com/pdkit/pdkit',
+    url='https://github.com/pranavanba/pdkit',
     long_description=readme(),
     keywords='parkinson`s disease',
     author='PDkit Project members',
