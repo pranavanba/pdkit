@@ -582,7 +582,7 @@ def compute_interpeak(data, sample_rate):
     freq = np.abs(freqs[imax_freq])
 
     # Inter-peak samples:
-    interpeak = np.int(np.round(sample_rate / freq))
+    interpeak = int(np.round(sample_rate / freq))
 
     return interpeak
 
@@ -717,7 +717,7 @@ def autocorrelate(data, unbias=2, normalize=2):
 
     # Autocorrelation:
     coefficients = correlate(data, data, 'full')
-    size = np.int(coefficients.size/2)
+    size = int(coefficients.size/2)
     coefficients = coefficients[size:]
     N = coefficients.size
 
@@ -835,7 +835,7 @@ def ExpandSegmentIndicies(endPoint):
     startPoint = -1
     lbls = np.array([])
     for segment in range(endPoint.size):
-        lbls = np.append( arr=lbls ,values=np.repeat(segment, np.int(endPoint[segment]-startPoint)) )
+        lbls = np.append( arr=lbls ,values=np.repeat(segment, int(endPoint[segment]-startPoint)) )
         startPoint = endPoint[segment]
     return lbls
 
